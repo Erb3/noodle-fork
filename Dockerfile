@@ -1,6 +1,7 @@
 FROM oven/bun:alpine AS base
 RUN apk add --no-cache python3 make gcc
 ENV DATABASE_URL file:./dev.db
+ENV SKIP_ENV_VALIDATION true
 
 FROM base AS builder
 WORKDIR /app
