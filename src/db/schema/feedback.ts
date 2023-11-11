@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
-import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { integer, text } from "drizzle-orm/sqlite-core";
 import { createInsertSchema } from "drizzle-zod";
+import { sqliteTable } from "./noodle_table";
 
 export const feedback = sqliteTable("feedback", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
