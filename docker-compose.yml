@@ -4,5 +4,13 @@ services:
     image: "noodle"
     ports:
       - "3000:3000"
+    environment:
+      - UPSTASH_REDIS_REST_URL=http://127.0.0.1:6379
     env_file:
       - .env
+    depends_on:
+      - redis
+  redis:
+    image: docker.io/library/redis:alpine
+    ports:
+      - "6379:6379"
